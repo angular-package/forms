@@ -1,0 +1,72 @@
+<div [formGroup]="formGroup" *ngIf="formGroup && key">
+
+  <!-- Container -->
+  <md-input-container
+    *ngIf="element && model && attributes?.type"
+    [color]="attributes?.color"
+    [floatPlaceholder]="attributes?.floatPlaceholder"
+    [hideRequiredMarker]="attributes?.hideRequiredMarker"
+    [hintLabel]="attributes?.hintLabel"
+  >
+    <label [attr.for]="key" *ngIf="label">
+      {{label}}
+    </label>
+
+    <!-- Custom placeholder -->
+    <md-placeholder *ngIf="mdPlaceholder">
+      {{mdPlaceholder}}
+    </md-placeholder>
+
+    <!-- mdPrefix -->
+    <span *ngIf="mdPrefix" mdPrefix>{{mdPrefix}} &nbsp; </span>
+    <!-- Just input -->
+    <input
+      mdInput 
+      formControlName = "{{key}}"
+      [(ngModel)] = "model[key]"
+
+      [attr.autocomplete] = "(attributes?.autocomplete && attributes?.type === 'text') ? attributes?.autocomplete : null"
+      [attr.autofocus] = "attributes?.autofocus ? attributes?.autofocus : null"
+      [attr.max] = "(attributes?.max && attributes?.type === 'number') ? attributes?.max : null"
+      [attr.min] = "(attributes?.min && attributes?.type === 'number') ? attributes?.min : null"
+      [attr.maxlength] = "(attributes?.maxlength && attributes?.type === 'text') ? attributes?.maxlength : null"
+      [attr.minlength] = "(attributes?.minlength && attributes?.type === 'text') ? attributes?.minlength : null"
+      [attr.readonly] = "(attributes?.readonly) ? attributes?.readonly : null"
+
+      [id] = "attributes?.id"
+      [placeholder] = "(attributes?.placeholder && !attributes.mdPlaceholder) ? attributes.placeholder : null"
+      [required] = "attributes?.required"
+      [type] = "attributes?.type"
+
+      (change) = "onChange($event)"
+      (focus) = "onFocus($event)"
+      (keyup) = "onKeyUp($event)"
+      (onsubmit) = "onSubmit($event)"
+
+      #input
+    />
+    <!-- mdSuffix -->
+    <md-icon *ngIf="mdSuffix" mdSuffix>
+      {{mdSuffix}}
+    </md-icon>
+
+    <md-hint align="end" *ngIf="mdHint?.end" [ngSwitch]="mdHint.end">
+      <span *ngSwitchCase="'maxlength'">
+        {{model[key]?.length}} / {{attributes?.maxlength}}
+      </span>
+      <span *ngSwitchDefault>
+        {{mdHint.end}}
+      </span>
+    </md-hint>
+    <md-hint align="start" *ngIf="mdHint?.start" [ngSwitch]="mdHint.start">
+      <span *ngSwitchCase="'maxlength'">{{model[key]?.length || 0}} / {{attributes?.maxlength}}</span>
+      <span *ngSwitchDefault>
+        {{mdHint.start}}
+      </span>
+    </md-hint>
+
+    <md-error [innerHTML]="error?.message"></md-error>
+
+  </md-input-container>
+
+</div>

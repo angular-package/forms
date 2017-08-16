@@ -1,0 +1,22 @@
+<!--
+<form (ngSubmit)="onSubmit($event)" [formGroup]="form" novalidate *ngIf="form && key && model">
+  <input type="hidden" formControlName="_id" />
+  <md-select 
+    #select         = "mdSelect" 
+
+    formControlName = "{{key}}" 
+    placeholder     = "{{placeholder}}" 
+
+    [(ngModel)]     = "model[key]" 
+
+    (change)        = "onChange($event)" 
+    (onClose)       = "onClose($event)"
+    (focus)         = "onFocus($event)"
+  >
+    <md-option *ngFor="let option of options" [value]="option[key]">
+      {{objectGet(option, viewValue)}}
+    </md-option>
+  </md-select>
+  <a style="display: none;" #open (click)="select.open()">open</a>
+</form>
+-->

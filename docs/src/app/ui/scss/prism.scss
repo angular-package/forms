@@ -1,0 +1,19 @@
+
+prism-highlight {
+  display: flex;
+  flex: 1 1 100%;
+  background: rgba(0,0,0,.01);
+  border: .5px solid rgba(0,0,0,.03);
+
+  pre[class*="language-"] {
+    margin: 0;
+    padding: 30px 50px;
+    background: transparent;
+    font-size: 0.875em;
+
+    code {
+      white-space: pre-wrap;
+      tab-size: 2;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" opened="true">
+    <ngx-ui-navigation [name]="'docs'"></ngx-ui-navigation>
+  </md-sidenav>
+  <div class="component-sidenav-content">
+
+    <!-- header -->
+    <app-ui-header>
+    </app-ui-header>
+
+    <!-- router -->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+  </div>
+</md-sidenav-container>

@@ -1,0 +1,38 @@
+@import './../../app-palette.scss';
+@import './../../app-theming.scss';
+
+.header {
+  z-index: 2;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 135px;
+
+  h1 {
+    padding: 0px 50px;
+  }
+}
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.3;
+}
+
+.active-link {
+  font-weight: 600;
+  color: mat-color($ngx-form, 500);
+  background-color: #fafafa;
+  background: #fafafa;
+}
+
+.hover-link {
+  background-color: #fafafa;
+  background: #fafafa;
+}
