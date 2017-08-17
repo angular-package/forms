@@ -16,6 +16,8 @@ CVS
 karma.conf.js
 node_modules
 npm-debug.log
+
+demo
 src
 test
 docs
