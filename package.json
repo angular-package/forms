@@ -1,6 +1,6 @@
 {
   "name": "@ngx-package/forms",
-  "version": "0.1.1-beta",
+  "version": "0.1.0-beta.1",
   "description": "Angular 2+ package to dynamically create html forms.",
   "author": "Ścibor Rudnicki <scibor.rudnicki@wwwdev.io> (http://ngx-form.wwwwdev.io)",
   "homepage": "https://github.com/ngx-package/forms#readme",
@@ -14,25 +14,20 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "bundle": "",
-    "element": "(cd packages/element && npm start && cd dist && copyfiles **.* ../../../element)",
-    "material": "(cd packages/material && npm start)",
+    "element": "(cd packages/element && npm run start:clean && cd dist && copyfiles **.* ../../../element)",
+    "interface": "(cd packages/element && npm run start:clean && cd dist && copyfiles **.* ../../../interface)",
+    "material": "(cd packages/material && npm run start:clean && cd dist && copyfiles **.* ../../../material)",
+    "type": "(cd packages/type && npm run start:clean && cd dist && copyfiles **.* ../../../type)",
     "prebuild": "",
     "build": "",
     "postbuild": "",
     "prepublish": "",
-    "start": "concurrently \"npm run element\" \"npm run material\"",
+    "start": "concurrently \"npm run element\" \"npm run interface\" \"npm run material\" \"npm run type\"",
     "html": "",
     "test": ""
   },
   "license": "MIT",
-  "dependencies": {
-    "@angular/tsc-wrapped": "^4.3.1",
-    "@ngx-core/common": "^1.1.2",
-    "@ngx-form/interface": "^0.5.1",
-    "@ngx-form/type": "^0.1.6",
-    "@types/lodash-es": "^4.14.5",
-    "lodash-es": "^4.17.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "^4.3.1",
     "@angular/cdk": "^2.0.0-beta.8",
