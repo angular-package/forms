@@ -1,6 +1,6 @@
 {
   "name": "@ngx-package/forms",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "Angular 2+ package to dynamically create html forms.",
   "author": "Ścibor Rudnicki <scibor.rudnicki@wwwdev.io> (http://ngx-form.wwwwdev.io)",
   "homepage": "https://github.com/ngx-package/forms#readme",
