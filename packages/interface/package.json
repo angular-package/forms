@@ -12,13 +12,14 @@
     "Ścibor Rudnicki <scibor.rudnicki@wwwdev.io>"
   ],
   "scripts": {
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./dist ./node_modules",
     "bundle": "rollup -c rollup.config.js",
-    "prebuild": "",
+    "prebuild": "npm install",
     "build": "./node_modules/.bin/ngc -p tsconfig.json",
-    "postbuild": "npm run bundle",
-    "prepublish": "npm run build",
+    "postbuild": "",
+    "prepublish": "",
     "start": "npm run build",
+    "start:clean": "npm run clean && npm run build",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "license": "MIT",
